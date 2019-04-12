@@ -50,9 +50,9 @@ public class DogHost {
 
         boolean result = false;
 
-        if (dog.getConsumoRacao() + totalRacao() < maximoRacao && indiceDogs < dogs.length) {
-            dogs[indiceDogs] = dog;
-            indiceDogs++;
+        if (dog.getConsumoRacao() + this.totalRacao() < this.maximoRacao && this.indiceDogs < this.dogs.length) {
+            this.dogs[this.indiceDogs] = dog;
+            this.indiceDogs++;
             result = true;
         }
 
@@ -67,10 +67,10 @@ public class DogHost {
      */
     public String listaDogs() {
 
-        String result = nome + ":" + System.lineSeparator();
+        String result = this.nome + ":" + System.lineSeparator();
 
-        for (int i = 0; i < dogs.length; i++) {
-            result += dogs[i].toString();
+        for (int i = 0; i < this.indiceDogs; i++) {
+            result += this.dogs[i].toString() + System.lineSeparator();
         }
 
         return result;
@@ -99,7 +99,7 @@ public class DogHost {
      */
     private boolean contains(Dog toto) {
         boolean result = false;
-        for (int i = 0; i < dogs.length; i++) {
+        for (int i = 0; i < this.indiceDogs; i++) {
             if (dogs[i].equals(toto)) {
                 result = true;
                 break;
@@ -115,7 +115,7 @@ public class DogHost {
      */
     public int totalRacao() {
         int result = 0;
-        for (int i = 0; i < dogs.length; i++) {
+        for (int i = 0; i < this.indiceDogs; i++) {
             result += dogs[i].getConsumoRacao();
         }
         return result;
@@ -128,7 +128,7 @@ public class DogHost {
      */
     public double totalValorDiario() {
         double result = 0;
-        for (int i = 0; i < dogs.length; i++) {
+        for (int i = 0; i < this.indiceDogs; i++) {
             result += consumoDiario(dogs[i]);
         }
         return result;

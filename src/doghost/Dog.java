@@ -6,7 +6,7 @@ import java.util.Objects;
  * Classe que representa os dogs que podem ser hospedados pelos doghosts.
  */
 public class Dog {
-
+    
     /**
      * Nome do dog em questao.
      */
