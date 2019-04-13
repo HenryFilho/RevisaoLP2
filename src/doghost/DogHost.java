@@ -4,7 +4,7 @@ package doghost;
  * Classe que representa o anfitriao que se propôs a hospedar os cachorros.
  */
 public class DogHost {
-
+  
     /**
      * Nome do anfitriao.
      */
@@ -88,7 +88,7 @@ public class DogHost {
         if (!contains(toto))
             throw new IllegalArgumentException("Dog não cadastrado.");
 
-        return consumoDiario(toto) * dias;
+        return this.consumoDiario(toto) * dias;
     }
 
     /**
@@ -100,7 +100,7 @@ public class DogHost {
     private boolean contains(Dog toto) {
         boolean result = false;
         for (int i = 0; i < this.indiceDogs; i++) {
-            if (dogs[i].equals(toto)) {
+            if (this.dogs[i].equals(toto)) {
                 result = true;
                 break;
             }
@@ -116,7 +116,7 @@ public class DogHost {
     public int totalRacao() {
         int result = 0;
         for (int i = 0; i < this.indiceDogs; i++) {
-            result += dogs[i].getConsumoRacao();
+            result += this.dogs[i].getConsumoRacao();
         }
         return result;
     }
@@ -129,7 +129,7 @@ public class DogHost {
     public double totalValorDiario() {
         double result = 0;
         for (int i = 0; i < this.indiceDogs; i++) {
-            result += consumoDiario(dogs[i]);
+            result += this.consumoDiario(dogs[i]);
         }
         return result;
     }
@@ -142,5 +142,37 @@ public class DogHost {
      */
     private double consumoDiario(Dog dog) {
         return dog.getConsumoRacao() * 0.4;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getMaximoRacao() {
+        return this.maximoRacao;
+    }
+
+    public void setMaximoRacao(int maximoRacao) {
+        this.maximoRacao = maximoRacao;
+    }
+
+    public Dog[] getDogs() {
+        return this.dogs;
+    }
+
+    public void setDogs(Dog[] dogs) {
+        this.dogs = dogs;
+    }
+
+    public int getIndiceDogs() {
+        return this.indiceDogs;
+    }
+
+    public void setIndiceDogs(int indiceDogs) {
+        this.indiceDogs = indiceDogs;
     }
 }

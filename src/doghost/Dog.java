@@ -6,7 +6,7 @@ import java.util.Objects;
  * Classe que representa os dogs que podem ser hospedados pelos doghosts.
  */
 public class Dog {
-    
+
     /**
      * Nome do dog em questao.
      */
@@ -60,6 +60,30 @@ public class Dog {
         this.consumoRacao *= 2;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getTutor() {
+        return tutor;
+    }
+
+    public void setTutor(String tutor) {
+        this.tutor = tutor;
+    }
+
+    public String getRestricao() {
+        return restricao;
+    }
+
+  	public void setRestricao(String restricao) {
+		    this.restricao = restricao;
+	  }
+
     /**
      * Getter do consumo total de racao.
      *
@@ -67,6 +91,10 @@ public class Dog {
      */
     public int getConsumoRacao() {
         return consumoRacao;
+    }
+
+    public void setConsumoRacao(int consumoRacao) {
+        this.consumoRacao = consumoRacao;
     }
 
     @Override
