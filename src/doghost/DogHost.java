@@ -73,7 +73,7 @@ public class DogHost {
             result += this.dogs[i].toString() + System.lineSeparator();
         }
 
-        return result;
+        return result.trim();
     }
 
     /**
@@ -148,31 +148,15 @@ public class DogHost {
         return this.nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public int getMaximoRacao() {
         return this.maximoRacao;
-    }
-
-    public void setMaximoRacao(int maximoRacao) {
-        this.maximoRacao = maximoRacao;
     }
 
     public Dog[] getDogs() {
         return this.dogs;
     }
 
-    public void setDogs(Dog[] dogs) {
-        this.dogs = dogs;
-    }
-
     public int getIndiceDogs() {
         return this.indiceDogs;
-    }
-
-    public void setIndiceDogs(int indiceDogs) {
-        this.indiceDogs = indiceDogs;
     }
 }

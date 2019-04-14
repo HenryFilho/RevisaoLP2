@@ -23,7 +23,8 @@ public class Dog {
     private int consumoRacao;
 
     /**
-     * Restricao que pode tornar a racao mais cara. (i.e. obesos, alergicos, celiacos, veganos, etc).
+     * Restricao que pode tornar a racao mais cara.
+     * (i.e. obesos, alergicos, celiacos, veganos, etc).
      */
     private String restricao;
 
@@ -48,7 +49,8 @@ public class Dog {
      * @param nome         Nome do dog.
      * @param tutor        Nome do tutor/dono do dog.
      * @param consumoRacao Quanto de racao o dog consome diariamente.
-     * @param restricao    Restricao quanto a alimentacao do dog. (i.e. obesos, alergicos, celiacos, veganos, etc)
+     * @param restricao    Restricao quanto a alimentacao do dog.
+     *                     (i.e. obesos, alergicos, celiacos, veganos, etc)
      */
     public Dog(String nome, String tutor, int consumoRacao, String restricao) {
         validarEntradas(nome, tutor, consumoRacao);
@@ -61,28 +63,13 @@ public class Dog {
     }
 
     public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+        return this.nome;
     }
 
     public String getTutor() {
-        return tutor;
+        return this.tutor;
     }
 
-    public void setTutor(String tutor) {
-        this.tutor = tutor;
-    }
-
-    public String getRestricao() {
-        return restricao;
-    }
-
-  	public void setRestricao(String restricao) {
-		    this.restricao = restricao;
-	  }
 
     /**
      * Getter do consumo total de racao.
@@ -90,16 +77,12 @@ public class Dog {
      * @return Retorna o atributo {@code consumoRacao}
      */
     public int getConsumoRacao() {
-        return consumoRacao;
-    }
-
-    public void setConsumoRacao(int consumoRacao) {
-        this.consumoRacao = consumoRacao;
+        return this.consumoRacao;
     }
 
     @Override
     public String toString() {
-        return "Dog [name=" + nome + ", tutor=" + tutor + "]";
+        return "Dog [name=" + this.nome + ", tutor=" + this.tutor + "]";
     }
 
     @Override
@@ -107,12 +90,12 @@ public class Dog {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Dog dog = (Dog) o;
-        return nome.equals(dog.nome) && tutor.equals(dog.tutor);
+        return this.nome.equals(dog.nome) && this.tutor.equals(dog.tutor);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, tutor);
+        return Objects.hash(this.nome, this.tutor);
     }
 
     /**
